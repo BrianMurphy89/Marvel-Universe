@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #spoiler {
+        width: 50%;
+        padding: 50px 0;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+    <script>
+  const spoiler = () => {
+      let x = document.getElementById("spoiler");
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+  }
+  </script>
+  </head>
+  <body>
+    <h1><%=marvel.name%></h1>
+    <nav>
+      <a href="/marvel-home">Return to Characters</a>
+    </nav>
+    <img src="<%=marvel.img%>" alt="<%=marvel.name%>">
+    Location: <%=marvel.location%><br/>
+    Powers: <%=marvel.powers%><br/>
+    Movies Appeared In: <%=marvel.movies%><br/>
+    History: <%=marvel.history%><br/>
+    Dead or Alive?!: <button type="button" name="dead" onclick="spoiler()">Spoiler!</button>
+    <div id="spoiler">
+      <% if(marvel.dead === true) { %>
+        Unfortunately, <%=marvel.name%> is no longer apart of the Marvel Universe
+      <% } else { %>
+        <%=marvel.name%> is alive and kicking!
+        <% } %>
+    </div>
+    <form action="/marvel-home/<%=marvel.id%>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete Character">
+    </form>
+  </body>
+</html>

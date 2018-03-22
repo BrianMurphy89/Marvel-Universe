@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Marvel: All You Need to Know Before Infinity War</h1>
+    <ul>
+      <% for(let i = 0; i < marvel.length; i++){ %>
+        <li>
+          <img src="<%=marvel[i].img%>" alt="<%=marvel[i].name%>">
+          <a href="/marvel-home/<%=marvel[i].id%>"><%=marvel[i].name%></a><br/>
+          Location: <%=marvel[i].location%>
+        </li>
+      <% } %>
+    </ul>
+  </body>
+</html>

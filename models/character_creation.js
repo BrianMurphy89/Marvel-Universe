@@ -7,6 +7,7 @@ const marvelSchema = new Schema({
   location: String,
   powers: String,
   movies: String,
+  history: String,
   dead: Boolean
 })
 

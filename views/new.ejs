@@ -6,5 +6,15 @@
   </head>
   <body>
     <h1>Marvel Character Creation Page</h1>
+    <form action="/marvel-home" method="POST">
+      Image: <input type="text" name="img"><br/>
+      Name: <input type="text" name="name"><br/>
+      Location in Universe: <input type="text" name="location"><br/>
+      Powers: <input type="text" name="powers"><br/>
+      Movies Appeared In: <input type="text" name="movies"><br/>
+      Description: <input type="text" name="description"><br/>
+      Deceased?: <input type="checkbox" name="dead"><br/>
+      <input type="submit" value="Submit Character">
+    </form>
   </body>
 </html>

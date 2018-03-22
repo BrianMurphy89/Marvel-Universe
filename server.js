@@ -8,7 +8,7 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}));
 
 const marvelController = require('./controllers/marvel.js');
-app.use('/home', marvelController);
+app.use('/marvel-home', marvelController);
 
 
 
