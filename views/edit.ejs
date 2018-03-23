@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Character</h1>
+    <a href="/marvel-home">Return to Characters</a>
+    <form action="/marvel-home/<%=marvel.id%>?_method=PUT" method="POST">
+      Image: <input type="text" name="img" value="<%marvel.img%>"><br/>
+      Name: <input type="text" name="name" value="<%marvel.name%>"><br/>
+      Location in Universe: <input type="text" name="location" value="<%marvel.location%>"><br/>
+      Powers: <input type="text" name="powers" value="<%=marvel.powers%>"><br/>
+      Movies Appeared In: <input type="text" name="movies" value="<%marvel.movies%>"><br/>
+      History: <input type="text" name="history" value="<%marvel.history%>"><br/>
+      Deceased?: <input type="checkbox" name="dead" <% if(marvel.dead) { %>
+        checked
+      <% } %>
+      ><br/>
+      <input type="submit" value="Edit Character">
+    </form>
+  </body>
+</html>

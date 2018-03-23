@@ -25,20 +25,27 @@ router.get('/', (req,res) => {
   })
 })
 
-router.get('/:id', (req,res) => {
-  Marvel.findById(req.params.id, (err,foundCharacter) => {
-    res.render('show.ejs', {
-      marvel:foundCharacter
-    })
-  })
-})
-
 router.delete('/:id' , (req,res) => {
   Marvel.findByIdAndRemove(req.params.id, (err,data) => {
     res.redirect('/marvel-home')
   })
 })
 
+router.get('/:id', (req,res) => {
+  Marvel.findById(req.params.id, (err,foundCharacter) => {
+    res.render('show.ejs', {
+      marvel: foundCharacter
+    })
+  })
+})
+
+router.get('/:id/edit' , (req,res) => {
+  Marvel.findById(req.params.id, (err,foundCharacter) => {
+    res.render('edit.ejs', {
+      marvel: foundCharacter
+    })
+  })
+})
 
 
 module.exports = router;
