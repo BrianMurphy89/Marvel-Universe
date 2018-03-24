@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
     <h1>Edit Character</h1>
-    <a href="/marvel-home">Return to Characters</a>
+      <nav>
+        <a href="/marvel-home">Return to Characters</a>
+      </nav>
     <form action="/marvel-home/<%=marvel.id%>?_method=PUT" method="POST">
       Image: <input type="text" name="img" value="<%=marvel.img%>"><br/>
       Name: <input type="text" name="name" value="<%=marvel.name%>"><br/>

@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}));
+app.use(express.static('public'));
 
 const marvelController = require('./controllers/marvel.js');
 app.use('/marvel-home', marvelController);

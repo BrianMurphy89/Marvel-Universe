@@ -1,0 +1,19 @@
+* {
+  border: red solid 1px;
+}
+
+#marvel-name {
+  font-family: 'Bangers', cursive;
+}
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  height: 250px;
+  width: 250px;
+}
