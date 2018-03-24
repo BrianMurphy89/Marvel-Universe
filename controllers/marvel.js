@@ -47,5 +47,16 @@ router.get('/:id/edit' , (req,res) => {
   })
 })
 
+router.put('/:id', (req,res) => {
+  if(req.body.dead === 'on'){
+    req.body.dead = true;
+  } else {
+    req.body.dead = false;
+  }
+  Marvel.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedCharacter) => {
+    res.redirect('/marvel-home')
+  })
+})
+
 
 module.exports = router;
