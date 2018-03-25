@@ -2,24 +2,29 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
-    <h1>Marvel: All You Need to Know Before Infinity War</h1>
+  <header>
+    <h1 id="index-h1">Marvel: All You Need to Know Before Infinity War</h1>
       <nav class="nav justify-content-center">
         <a href="/marvel-home/new">Add a Marvel Character</a>
       </nav>
-          <ul>
-            <% for(let i = 0; i < marvel.length; i++){ %>
-            <div class="d-inline-flex flex-row justify-content-center">
-              <li>
-                <img src="<%=marvel[i].img%>" alt="<%=marvel[i].name%>" class="rounded-circle">
-                <a href="/marvel-home/<%=marvel[i].id%>" class="nav justify-content-center"><%=marvel[i].name%></a><br/>
-              </li>
-            <% } %>
-          </ul>
-        </div>
-      </body>
-    </html>
+  </header>
+    <body id="main-page">
+      <main>
+      <ul>
+        <% for(let i = 0; i < marvel.length; i++){ %>
+        <div class="d-inline-flex flex-row justify-content-center">
+          <li id="character-box">
+            <img src="<%=marvel[i].img%>" alt="<%=marvel[i].name%>" class="rounded-circle">
+            <a href="/marvel-home/<%=marvel[i].id%>" class="nav justify-content-center text-danger"><%=marvel[i].name%></a><br/>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </main>
+  </body>
+  </html>

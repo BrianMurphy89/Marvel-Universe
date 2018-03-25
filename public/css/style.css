@@ -1,7 +1,3 @@
-* {
-  border: red solid 1px;
-}
-
 #marvel-name {
   font-family: 'Bangers', cursive;
 }
@@ -16,4 +12,28 @@ li {
 img {
   height: 250px;
   width: 250px;
+  /* object-fit: contain; */
+}
+
+#main-page {
+  background-image: url(http://images.fanpop.com/images/image_uploads/civil-war-comics-marvel-3A-civil-war-301794_1280_800.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+header {
+  background: black;
+}
+
+#character-box {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Bangers', cursive;
+}
+
+#index-h1 {
+  color: rgba(211, 211, 211, 0.5);
 }
