@@ -71,3 +71,7 @@ h6 {
 #new-body, #edit-body {
   background: rgba(0, 0, 0, 0.7);
 }
+
+#countdown {
+  color: rgba(211, 211, 211, 0.5);
+}
