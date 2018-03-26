@@ -13,6 +13,7 @@
         padding: 50px 0;
         text-align: center;
         margin-top: 20px;
+        overflow: contain;
       }
     </style>
     <script>
@@ -26,18 +27,21 @@
   }
   </script>
   </head>
-  <body id="show-page">
+  <header>
     <h1 id="marvel-name"><%=marvel.name%></h1>
     <nav>
-      <a href="/marvel-home">Return to Characters</a>
-      <a href="/marvel-home/<%=marvel.id%>/edit">Edit Character</a>
+      <a href="/marvel-home" class="nav justify-content-center">Return to Characters</a>
+      <a href="/marvel-home/<%=marvel.id%>/edit" class="nav justify-content-center">Edit Character</a>
     </nav>
-    <img src="<%=marvel.img%>" alt="<%=marvel.name%>" class="rounded-circle">
-    Location: <%=marvel.location%><br/>
-    Powers: <%=marvel.powers%><br/>
-    Movies Appeared In: <%=marvel.movies%><br/>
-    History: <%=marvel.history%><br/>
-    Dead or Alive?!: <button type="button" name="dead" onclick="spoiler()">Spoiler!</button>
+  </header>
+  <div class="container">
+  <body id="#show-page">
+    <img src="<%=marvel.img%>" alt="<%=marvel.name%>" id="show-img">
+    <h6>Location:</h6> <p><%=marvel.location%></p>
+    <h6>Powers:</h6> <p><%=marvel.powers%></p>
+    <h6>Movies Appeared In:</h6> <p><%=marvel.movies%></p>
+    <h6>History:</h6> <p><%=marvel.history%></p>
+    <h6>Dead or Alive?!:</h6> <p><button type="button" name="dead" onclick="spoiler()" class="btn btn-warning"></p>Spoiler!</button>
     <div id="spoiler">
       <% if(marvel.dead === true) { %>
         Unfortunately, <%=marvel.name%> is no longer apart of the Marvel Universe
@@ -46,7 +50,8 @@
         <% } %>
     </div>
     <form action="/marvel-home/<%=marvel.id%>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete Character">
+      <input type="submit" value="Delete Character" class="btn btn-danger">
     </form>
   </body>
+  </div>
 </html>

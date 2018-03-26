@@ -21,7 +21,7 @@ img {
   background-size: cover;
 }
 
-header {
+header, #new-page-header {
   background: black;
 }
 
@@ -34,6 +34,40 @@ h1 {
   font-family: 'Bangers', cursive;
 }
 
-#index-h1 {
+#index-h1, h1 {
   color: rgba(211, 211, 211, 0.5);
+}
+
+#new-form, #edit-form {
+  color: white;
+}
+
+#new-page, #edit-page, {
+  background-color: rgba(0, 0, 0, 0.7);;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  margin-top: 1em;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 25px;
+  border: 10px solid rgba(0, 0, 0, 0.7);;
+}
+
+#show-img {
+  float: right;
+}
+
+h6 {
+  font-family: 'Bangers', cursive;
+  margin-top: 10px;
+}
+
+#new-body {
+  background: rgba(0, 0, 0, 0.7);
 }

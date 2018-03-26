@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="edit-page">
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
@@ -7,23 +7,41 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <header>
     <h1>Edit Character</h1>
       <nav>
-        <a href="/marvel-home">Return to Characters</a>
+        <a href="/marvel-home" class="nav justify-content-center">Return to Characters</a>
       </nav>
-    <form action="/marvel-home/<%=marvel.id%>?_method=PUT" method="POST">
-      Image: <input type="text" name="img" value="<%=marvel.img%>"><br/>
-      Name: <input type="text" name="name" value="<%=marvel.name%>"><br/>
-      Location in Universe: <input type="text" name="location" value="<%=marvel.location%>"><br/>
-      Powers: <input type="text" name="powers" value="<%=marvel.powers%>"><br/>
-      Movies Appeared In: <input type="text" name="movies" value="<%=marvel.movies%>"><br/>
-      History: <input type="text" name="history" value="<%=marvel.history%>"><br/>
+  </header>
+  <body>
+    <form action="/marvel-home/<%=marvel.id%>?_method=PUT" method="POST" id="edit-form">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            Image: <input type="text" name="img" value="<%=marvel.img%>" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+          Name: <input type="text" name="name" value="<%=marvel.name%>" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        Location in Universe: <input type="text" name="location" value="<%=marvel.location%>" class="form-control">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          Powers: <input type="text" name="powers" value="<%=marvel.powers%>" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+          Movies Appeared In: <input type="text" name="movies" value="<%=marvel.movies%>" class="form-control">
+        </div>
+        <div class="form-group col-md-2">
+          History: <input type="text" name="history" value="<%=marvel.history%>" class="form-control">
+        </div>
+      </div>
       Deceased?: <input type="checkbox" name="dead" <% if(marvel.dead) { %>
         checked
       <% } %>
       ><br/>
-      <input type="submit" value="Edit Character">
+      <input type="submit" value="Edit Character" class="btn btn-warning">
     </form>
   </body>
 </html>
