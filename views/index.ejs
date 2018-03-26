@@ -4,14 +4,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <style>
+      p {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 0px;
+      }
+    </style>
   </head>
   <header>
     <h1 id="index-h1">Marvel: All You Need to Know Before Infinity War</h1>
       <nav class="nav justify-content-center">
         <a href="/marvel-home/new">Add a Marvel Character</a>
       </nav>
+      <p id="countdown"></p>
+      <script>
+        let countDownDate = new Date ("Apr 27, 2018 13:30:25").getTime();
+        let x = setInterval(() => {
+          let now = new Date().getTime();
+          let distance = countDownDate - now;
+          let days = Math.floor(distance / (1000 * 60 * 60 *24));
+          let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / ( 1000 * 60 * 60));
+          let minutes = Math.floor((distance % (100 * 60 * 60)) / (1000 * 60));
+          let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById('countdown').innerHTML = days + "d" + hours + 'h' + minutes + 'm' + seconds +'s';
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById('countdown').innerHTML = "THE LONG AWAITED DAY HAS ARRIVED!";
+          }
+        }, 1000);
+      </script>
   </header>
     <body id="main-page">
       <main>
